@@ -1,0 +1,132 @@
+//--------------------------------------------------------------------//
+// Post System
+
+model Post
+  @label("Post" "Posts")
+  @template("{{title}}")
+  @icon("file-text")
+{
+  id         String   @label("ID")
+                       @id @default("cuid()")
+                       @list.overflow({ length 10 hellip true })
+
+  profileId  String   @label("Author")
+                       @field.relation({ href "/admin/profile/search" key "profile" foreign "id" template "{{name}}" })
+                       @is.required
+                       @list.template({ key "profile" template "{{name}}" })
+                       @view.template({ key "profile" template "{{name}}" })
+
+  title      String   @label("Title")
+                       @is.required
+                       @field.text
+                       @searchable
+                       @list.text @view.text
+
+  content    String   @label("Content")
+                       @is.required
+                       @field.markdown
+                       @view.markdown
+
+  tags       String[] @label("Tags")
+                       @field.taglist
+                       @list.taglist
+                       @view.taglist
+
+  created    Datetime @label("Created")
+                       @default("now()") @sortable
+                       @list.date("m d, Y h:iA")
+                       @view.date("m d, Y h:iA")
+
+  updated    Datetime @label("Updated")
+                       @default("now()") @timestamp @sortable
+                       @list.date("m d, Y h:iA")
+                       @view.date("m d, Y h:iA")
+
+  profile    Profile  @relation({ local "profileId" foreign "id" })
+  comments   Comment[]
+  votes      Vote[]
+}
+
+//--------------------------------------------------------------------//
+// Comment System
+
+model Comment
+  @label("Comment" "Comments")
+  @template("{{content}}")
+  @icon("message-circle")
+{
+  id        String   @label("ID")
+                      @id @default("cuid()")
+                      @list.overflow({ length 10 hellip true })
+
+  postId    String   @label("Post")
+                      @field.relation({ href "/admin/post/search" key "post" foreign "id" template "{{title}}" })
+                      @is.required
+                      @list.template({ key "post" template "{{title}}" })
+                      @view.template({ key "post" template "{{title}}" })
+
+  profileId String   @label("Author")
+                      @field.relation({ href "/admin/profile/search" key "profile" foreign "id" template "{{name}}" })
+                      @is.required
+                      @list.template({ key "profile" template "{{name}}" })
+                      @view.template({ key "profile" template "{{name}}" })
+
+  content   String   @label("Content")
+                      @is.required
+                      @field.markdown
+                      @view.markdown
+
+  created   Datetime @label("Created")
+                      @default("now()") @sortable
+                      @list.date("m d, Y h:iA")
+                      @view.date("m d, Y h:iA")
+
+  updated   Datetime @label("Updated")
+                      @default("now()") @timestamp @sortable
+                      @list.date("m d, Y h:iA")
+                      @view.date("m d, Y h:iA")
+
+  post      Post     @relation({ local "postId" foreign "id" })
+  profile   Profile  @relation({ local "profileId" foreign "id" })
+  votes     Vote[]
+}
+
+//--------------------------------------------------------------------//
+// Vote System (for both Posts and Comments)
+
+model Vote
+  @label("Vote" "Votes")
+  @template("{{profile.name}}: {{value}}")
+  @icon("thumbs-up")
+{
+  id        String   @label("ID")
+                      @id @default("cuid()")
+
+  profileId String   @label("Voter")
+                      @field.relation({ href "/admin/profile/search" key "profile" foreign "id" template "{{name}}" })
+                      @is.required
+                      @list.template({ key "profile" template "{{name}}" })
+                      @view.template({ key "profile" template "{{name}}" })
+
+  postId    String?  @label("Post")
+                      @field.relation({ href "/admin/post/search" key "post" foreign "id" template "{{title}}" })
+                      @list.template({ key "post" template "{{title}}" })
+                      @view.template({ key "post" template "{{title}}" })
+
+  commentId String?  @label("Comment")
+                      @field.relation({ href "/admin/comment/search" key "comment" foreign "id" template "{{content}}" })
+                      @list.template({ key "comment" template "{{content}}" })
+                      @view.template({ key "comment" template "{{content}}" })
+
+  value     Int      @label("Vote Value")
+                      @default(1) // 1 = upvote, -1 = downvote
+                      @field.number({ min -1 max 1 step 1 })
+                      @is.required
+
+  created   Datetime @label("Created")
+                      @default("now()")
+
+  profile   Profile  @relation({ local "profileId" foreign "id" })
+  post      Post?    @relation({ local "postId" foreign "id" })
+  comment   Comment? @relation({ local "commentId" foreign "id" })
+}

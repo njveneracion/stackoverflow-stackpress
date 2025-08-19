@@ -1,5 +1,4 @@
 import '../styles/page.css';
-import { useState } from 'react';
 import { ServerPageProps } from 'stackpress/view/client';
 import Layout from '../Layout.js';
 
@@ -20,7 +19,6 @@ export function Head(props: ServerPageProps) {
 
 export default function HomePage(props: ServerPageProps) {
   const { session, request, response } = props;
-  const [count, setCount] = useState(0)
 
   return (
     <Layout
@@ -28,14 +26,16 @@ export default function HomePage(props: ServerPageProps) {
       request={request}
       response={response}
     >
-      <div className="px-p-10">
-        <h1>Welcome to </h1>
+      <section>
+        <div className="px-p-10 app-content " >
+        <h1 className="px-4 font-bold text-2xl">Welcome to STACKPRESS {session.name} {session.id === session.id ? "johfiu@example.com" : session.name}</h1>
         <div className="p-4">
-          <button onClick={() => setCount((count) => count + 1)}>
-            count is {count}
-          </button>
+         
+          <a href='/dashboard'>Go to Dashboard</a>
+          <p className="mt-4">This is a simple home page for Stackpress.</p>
         </div>
       </div>
+      </section>
     </Layout>
   )
 }

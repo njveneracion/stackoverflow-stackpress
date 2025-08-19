@@ -1,9 +1,0 @@
-{
-  "plugin": {
-    "/home/njven/work/stackoverflow-stackpress/node_modules/stackpress/cjs/client/transform": {},
-    "/home/njven/work/stackoverflow-stackpress/node_modules/stackpress/cjs/types/transform": {},
-    "/home/njven/work/stackoverflow-stackpress/node_modules/stackpress/cjs/sql/transform": {},
-    "/home/njven/work/stackoverflow-stackpress/node_modules/stackpress/cjs/view/transform": {},
-    "/home/njven/work/stackoverflow-stackpress/node_modules/stackpress/cjs/admin/transform": {}
-  }
-}

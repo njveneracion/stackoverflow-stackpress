@@ -275,6 +275,8 @@ export const session = {
             //page routes
             { method: 'ALL', route: '/' },
             { method: 'GET', route: '/form' },
+            { method: 'GET', route: '/dashboard' },
+            { method: 'GET', route: '/login' },
             { method: 'ALL', route: '/auth/**' },
             { method: 'ALL', route: '/admin/**' },
             { method: 'ALL', route: '/api/**' }
@@ -284,7 +286,8 @@ export const session = {
             { method: 'ALL', route: '/' },
             { method: 'GET', route: '/form' },
             { method: 'ALL', route: '/auth/**' },
-            { method: 'ALL', route: '/api/**' }
+            { method: 'ALL', route: '/api/**' },
+            { method: 'GET', route: '/dashboard' },
         ],
         GUEST: [
             //page routes
