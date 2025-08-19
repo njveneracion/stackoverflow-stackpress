@@ -2,6 +2,8 @@
 import { useEffect } from 'react';
 import SideNav from './components/SideNav.js';
 import Header from './components/Header.js';
+import Footer from './components/Footer.js';
+
 
 //views
 import type { LayoutPanelProps } from 'stackpress/view/client';
@@ -14,23 +16,21 @@ import {
 
 export function LayoutApp({ children }: { children: React.ReactNode }) {
   return (
-    <div className="min-h-screen bg-gray-50">
-      <Header/>
-      <div className="pt-14">
-        {/* Centered container that holds both sidebar and content */}
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="flex ">
-            <SideNav/>
-            {/* Main content area */}
-            <LayoutMain>
-              <div className="px-110 mx-3 mt-20">
-                {children}
-              </div>
-            </LayoutMain>
-          </div>
-        </div>
+   <>
+   <Header />
+   <div className='flex justify-evenly'>
+    
+    {/* Main content area */}
+    <LayoutMain>
+      <div className='flex'>
+          <SideNav/>
+          <main className='pl-7 pt-20 max-w-7xl'><div className='max-w-4xl overflow-y-auto h-100vh'>{children}</div></main>
       </div>
-    </div>
+      <Footer/>
+    </LayoutMain>
+   </div>
+
+   </>
   );
 }
 

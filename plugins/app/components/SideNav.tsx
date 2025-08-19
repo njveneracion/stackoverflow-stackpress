@@ -4,7 +4,7 @@ export default function SideNav() {
   const session = useSession();
   
   return (
-    <nav className="fixed left-0 pl-60 top-14 w-110 h-[calc(100vh-3.5rem)] bg-white border-r border-gray-300 overflow-y-auto z-30">
+    <nav className=" w-100 pl-50  bg-white border-r border-gray-300 overflow-y-auto z-30 h-100vh">
       <div className="py-6">
         {/* Home */}
         <div className="px-2 mb-6">
@@ -27,7 +27,7 @@ export default function SideNav() {
           
           <div className="space-y-0">
             <a 
-              href="/posts" 
+              href="/question" 
               className="flex items-center px-3 py-2 text-sm text-gray-800 hover:bg-orange-50 border-r-4 border-transparent hover:border-orange-400 transition-all"
             >
               <svg className="w-4 h-4 mr-2 text-gray-600" fill="currentColor" viewBox="0 0 20 20">
@@ -95,7 +95,9 @@ export default function SideNav() {
                 </svg>
                 Saves
               </a>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, temporibus corrupti! Laboriosam officia nisi, at quisquam quam optio distinctio enim perspiciatis fugit! Cumque exercitationem, sequi architecto rerum tenetur mollitia incidunt placeat culpa nam enim saepe laborum autem fugit quisquam perferendis laboriosam ut consequatur aperiam ipsam distinctio nulla aut. Perferendis officiis beatae dolorum, blanditiis necessitatibus sapiente expedita dolores possimus maxime provident mollitia vero ipsa repellendus consequatur quas id temporibus aut voluptate, dolor aliquid sit voluptatem illum molestias iure. Fugit, culpa maxime dolor voluptatem ab numquam necessitatibus excepturi, assumenda facilis nihil veniam eius, a quasi totam possimus doloribus quaerat animi. Dignissimos corporis unde adipisci distinctio minima, atque cumque neque temporibus asperiores odio ullam vitae quaerat in velit debitis quibusdam praesentium assumenda labore, inventore saepe? Consequatur, sequi doloribus aut adipisci ea iusto a minus sunt ex porro dignissimos culpa nostrum consequuntur, nisi dolorem corporis, voluptate officiis voluptatem quae repellendus? Quisquam tempore neque recusandae labore veritatis. Fugit rerum consequuntur mollitia accusantium at, repudiandae obcaecati iure, maxime eaque quasi nulla voluptatibus itaque numquam inventore ad eum nihil architecto adipisci optio exercitationem commodi, ut atque. Unde magni alias vero cupiditate? Cum, odit repellendus. Aliquid magni similique, corrupti dolore quam provident omnis odit dolorum, illo vitae molestiae doloremque animi reprehenderit voluptas iusto excepturi itaque, soluta totam laborum architecto nesciunt repellendus? Doloremque, minima! Quos veniam ratione eos obcaecati voluptatum ex hic impedit corrupti nemo cupiditate, recusandae tempore laudantium amet consequuntur ab quaerat autem eligendi adipisci dolores rem! Explicabo, iste soluta! Non illum quidem maiores ab culpa, ipsum dolor nisi doloribus illo obcaecati ipsa explicabo optio in modi consequuntur animi beatae reiciendis at nemo cum doloremque provident. Suscipit perspiciatis sapiente temporibus, explicabo similique earum! Eaque reiciendis repellat, architecto tenetur sequi commodi, dicta possimus ratione quam non sit provident inventore voluptate, voluptas debitis ducimus? Ea rem blanditiis odio illo voluptate.</p>
+              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit illo dolorem nisi modi saepe iure, quae quod ipsum aliquam optio autem culpa rem dignissimos delectus odit excepturi praesentium, est neque voluptas? Repellat nesciunt ullam reprehenderit eius. Porro, quibusdam? Ipsum, dolores? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate unde, quidem autem ipsa beatae quo repellat explicabo ex et qui soluta officiis voluptates delectus ea itaque corporis. Earum suscipit modi in itaque beatae commodi placeat non debitis sint laboriosam? Repudiandae quos voluptate suscipit unde sit nisi placeat similique. Quia, laudantium.
+                
+              </p>
             </div>
           </div>
         )}

@@ -288,6 +288,7 @@ export const session = {
             { method: 'ALL', route: '/auth/**' },
             { method: 'ALL', route: '/api/**' },
             { method: 'GET', route: '/dashboard' },
+            { method: 'GET', route: '/question' },
         ],
         GUEST: [
             //page routes

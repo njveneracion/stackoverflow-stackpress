@@ -1,5 +1,5 @@
-import { ServerPageProps } from "stackpress/view/client";
-import Layout from "../Layout.js";
+import {ServerPageProps} from "stackpress/view/client";
+import Layout from "../../Layout.js";
 
 export function Head(props: ServerPageProps) {
   const { styles = [] } = props;
@@ -16,15 +16,15 @@ export function Head(props: ServerPageProps) {
   )
 }
 
-export default function dashboard(props: ServerPageProps) {
-  const { session, request, response } = props;
+export default function QuestionPage(props: ServerPageProps) {
+    const { session, request, response } = props;
 
   return (
     <Layout session={session} request={request} response={response}>
-     <div className="overflow-y-auto">
-        <h1 className="text-2xl font-bold">Dashboard</h1>
-        <p>Welcome {session.roles.includes("ADMIN") ? "Admin" : "User"} </p>
-      </div>
+        <div>
+            <h1>Question Page </h1>
+            <p>Welcome {session.roles.includes("ADMIN") ? "Admin" : "User"} </p>
+        </div>
     </Layout>
   )
 }
