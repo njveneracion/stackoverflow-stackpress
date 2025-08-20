@@ -3,6 +3,7 @@ import Layout from "../Layout.js";
 
 export function Head(props: ServerPageProps) {
   const { styles = [] } = props;
+  
   return (
     <>
       <title>Stackpress</title>
@@ -23,7 +24,8 @@ export default function dashboard(props: ServerPageProps) {
     <Layout session={session} request={request} response={response}>
      <div className="overflow-y-auto">
         <h1 className="text-2xl font-bold">Dashboard</h1>
-        <p>Welcome {session.roles.includes("ADMIN") ? "Admin" : "User"} </p>
+        <p>Welcome <span className="font-bold text-orange-500">{session.name}</span>! </p>
+        <p className="text-gray-500">You are logged in as a {session.roles.includes('ADMIN') ? "ADMIN" : session.roles.includes('USER') ? "USER" : "GUEST"}</p>
       </div>
     </Layout>
   )

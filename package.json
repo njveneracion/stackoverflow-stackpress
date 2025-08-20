@@ -6,6 +6,7 @@
     "plugins": [
         "./plugins/app/plugin",
         "./plugins/store/plugin",
+        "./plugins/sample/plugin",
         "stackpress"
     ],
     "scripts": {

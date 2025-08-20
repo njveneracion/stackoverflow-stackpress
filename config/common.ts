@@ -289,13 +289,14 @@ export const session = {
             { method: 'ALL', route: '/api/**' },
             { method: 'GET', route: '/dashboard' },
             { method: 'GET', route: '/question' },
+            { method: 'GET', route: '/create' },
         ],
         GUEST: [
             //page routes
             { method: 'ALL', route: '/' },
             { method: 'GET', route: '/form' },
             { method: 'ALL', route: '/auth/**' },
-            { method: 'ALL', route: '/api/**' }
+            { method: 'ALL', route: '/api/**' },
         ]
     }
 };
