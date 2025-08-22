@@ -56,8 +56,15 @@ export default action(async function Populate(_req, _res, ctx) {
         tags: ['javascript', 'es6', 'variables']
     });
 
-    if (post1.code !== 200 || post2.code !== 200) {
-        console.log('Error creating posts', post1, post2);
+    const post3 = await ctx.resolve<{ id: string }>('post-create', {
+        profileId: user1.results?.id,
+        title: 'What are the benefits of using TypeScript?',
+        content: 'I have heard a lot about TypeScript. Can someone explain its benefits over JavaScript?',
+        tags: ['typescript', 'javascript', 'frontend']
+    });
+
+    if (post1.code !== 200 || post2.code !== 200 || post3.code !== 200) {
+        console.log('Error creating posts', post1, post2, post3);
         return;
     }
 

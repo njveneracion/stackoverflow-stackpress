@@ -1,4 +1,4 @@
-import {ServerPageProps} from 'stackpress/view/client'
+import {ServerPageProps,} from 'stackpress/view/client'
 import Layout from '../../app/Layout.js';
 
 export function Head(props: ServerPageProps) {
@@ -21,6 +21,7 @@ export default function create(props: ServerPageProps) {
     
     return (
         <Layout session={session} request={request} response={response}>
+          {session.id}
             <div>
             <h1>Create Posts as {session.roles.includes('ADMIN') ? 'ADMIN' : session.roles.includes('USER') ? 'USER' : 'GUEST'}</h1>
             <form method="POST">

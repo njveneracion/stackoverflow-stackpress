@@ -17,6 +17,8 @@ export default function plugin(server: Server) {
     server.on('route', async _ => {
         server.all('/', '@/plugins/app/views/home', -100);
         server.get('/dashboard', '@/plugins/app/views/dashboard', -100);
-        server.get('/question', '@/plugins/app/views/sidenav/questionpage', -100);
+        server.get('/questions', '@/plugins/app/views/sidenav/questionpage', -100);
+        server.get('/posts', '@/plugins/app/views/posts', -100);
+        server.get('/api/home', () => import('./pages/home.js'));
     });
 };

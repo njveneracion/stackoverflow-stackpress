@@ -16,14 +16,23 @@ export function Head(props: ServerPageProps) {
   )
 }
 
+
 export default function QuestionPage(props: ServerPageProps) {
-    const { session, request, response } = props;
+
+  const { session, request, response } = props;
 
   return (
     <Layout session={session} request={request} response={response}>
         <div>
             <h1>Question Page </h1>
             <p>Welcome {session.roles.includes("ADMIN") ? "Admin" : "User"} </p>
+            <a href="/create" className="btn btn-primary">
+                Create Question
+            </a>
+
+            <div>
+              <p>{session.results}</p>
+            </div>
         </div>
     </Layout>
   )

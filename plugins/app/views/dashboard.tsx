@@ -26,6 +26,9 @@ export default function dashboard(props: ServerPageProps) {
         <h1 className="text-2xl font-bold">Dashboard</h1>
         <p>Welcome <span className="font-bold text-orange-500">{session.name}</span>! </p>
         <p className="text-gray-500">You are logged in as a {session.roles.includes('ADMIN') ? "ADMIN" : session.roles.includes('USER') ? "USER" : "GUEST"}</p>
+        <p>
+          {session.id}
+        </p>
       </div>
     </Layout>
   )

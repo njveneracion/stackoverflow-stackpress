@@ -288,7 +288,7 @@ export const session = {
             { method: 'ALL', route: '/auth/**' },
             { method: 'ALL', route: '/api/**' },
             { method: 'GET', route: '/dashboard' },
-            { method: 'GET', route: '/question' },
+            { method: 'GET', route: '/questions' },
             { method: 'GET', route: '/create' },
         ],
         GUEST: [
