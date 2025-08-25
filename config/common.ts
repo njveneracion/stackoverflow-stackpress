@@ -142,7 +142,7 @@ export const api = {
             scopes: ['user'],
             event: 'profile-detail',
             data: {}
-        }
+        },
     ]
 };
 
@@ -288,8 +288,8 @@ export const session = {
             { method: 'ALL', route: '/auth/**' },
             { method: 'ALL', route: '/api/**' },
             { method: 'GET', route: '/dashboard' },
-            { method: 'GET', route: '/questions' },
-            { method: 'GET', route: '/create' },
+            { method: 'GET', route: '/question/**' },
+            { method: 'GET', route: '/create-post' },
         ],
         GUEST: [
             //page routes
@@ -297,6 +297,7 @@ export const session = {
             { method: 'GET', route: '/form' },
             { method: 'ALL', route: '/auth/**' },
             { method: 'ALL', route: '/api/**' },
+
         ]
     }
 };

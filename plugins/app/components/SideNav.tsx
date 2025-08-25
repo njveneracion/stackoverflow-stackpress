@@ -29,11 +29,11 @@ export default function SideNav() {
       <nav className={`
         lg:relative lg:w-full lg:border-none lg:transform-none lg:shadow-none
         fixed left-0 top-0  bg-white border-r border-gray-500 
-        w-64 p-5 h-full z-35 overflow-y-auto shadow-lg
+        p-5 h-full z-35 overflow-y-auto shadow-lg
         transform transition-transform duration-300 ease-in-out
         ${isOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}
       `}>
-        <div className="py-4 px-2 mt-14 lg:mt-0">
+        <div className="py-4  mt-14 lg:mt-0">
           {/* Home */}
           <div className="mb-4">
             <a 

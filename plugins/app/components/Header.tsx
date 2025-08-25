@@ -21,28 +21,6 @@ export default function Header() {
                 stack<span className="font-bold">overflow</span>
               </span>
             </a>
-            
-            {/* Main Navigation */}
-            <nav className="hidden md:flex items-center gap-1 ml-4">
-              <a 
-                href="/posts" 
-                className="px-3 py-2 text-sm text-gray-600 hover:bg-gray-100 rounded transition-colors"
-              >
-                Questions
-              </a>
-              <a 
-                href="/tags" 
-                className="px-3 py-2 text-sm text-gray-600 hover:bg-gray-100 rounded transition-colors"
-              >
-                Tags
-              </a>
-              <a 
-                href="/users" 
-                className="px-3 py-2 text-sm text-gray-600 hover:bg-gray-100 rounded transition-colors"
-              >
-                Users
-              </a>
-            </nav>
           </div>
 
           {/* Search Bar */}
@@ -78,31 +56,6 @@ export default function Header() {
               </>
             ) : (
               <div className="flex items-center gap-3">
-                {/* Notifications/Inbox Icons */}
-                <div className="flex items-center gap-1">
-                  <button className="p-2 hover:bg-gray-100 rounded text-gray-600 relative">
-                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
-                      <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
-                    </svg>
-                    <span className="absolute -top-1 -right-1 w-4 h-4 bg-red-500 text-white text-xs rounded-full flex items-center justify-center">
-                      5
-                    </span>
-                  </button>
-                  
-                  <button className="p-2 hover:bg-gray-100 rounded text-gray-600">
-                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                    </svg>
-                  </button>
-
-                  <button className="p-2 hover:bg-gray-100 rounded text-gray-600">
-                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M10 2L3 7v11a2 2 0 002 2h4v-6h2v6h4a2 2 0 002-2V7l-7-5z"/>
-                    </svg>
-                  </button>
-                </div>
-
                 {/* User Avatar/Name */}
                 <div className="flex items-center gap-2">
                   <div className="w-8 h-8 bg-orange-500 rounded flex items-center justify-center text-white text-sm font-semibold">
